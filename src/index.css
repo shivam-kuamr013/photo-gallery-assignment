@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:       #080810;
+  --surface:  #0f0f1a;
+  --surface2: #16162a;
+  --border:   rgba(255,255,255,0.06);
+  --border-h: rgba(232,121,249,0.3);
+  --text:     #f8fafc;
+  --muted:    rgba(255,255,255,0.35);
+  --accent:   #e879f9;
+  --accent2:  #818cf8;
+  --accent3:  #38bdf8;
+  --gradient: linear-gradient(90deg, #e879f9, #818cf8, #38bdf8);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 500px;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(232,121,249,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 50%, rgba(129,140,248,0.07) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent2); border-radius: 99px; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes skeletonPulse {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 0.6; }
+}
+
+.fade-up { animation: fadeUp 0.5s cubic-bezier(0.22,1,0.36,1) both; }
+
+.bento-grid > *:nth-child(1)  { animation-delay: 0.04s; }
+.bento-grid > *:nth-child(2)  { animation-delay: 0.08s; }
+.bento-grid > *:nth-child(3)  { animation-delay: 0.12s; }
+.bento-grid > *:nth-child(4)  { animation-delay: 0.16s; }
+.bento-grid > *:nth-child(5)  { animation-delay: 0.20s; }
+.bento-grid > *:nth-child(6)  { animation-delay: 0.24s; }
+.bento-grid > *:nth-child(7)  { animation-delay: 0.28s; }
+.bento-grid > *:nth-child(n+8){ animation-delay: 0.32s; }
+
+.gradient-text {
+  background: var(--gradient);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease infinite;
+}
+
+.skeleton {
+  background: var(--surface2);
+  animation: skeletonPulse 1.5s ease infinite;
+}
