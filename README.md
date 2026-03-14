@@ -110,4 +110,3 @@ https://picsum.photos/v2/list?limit=30
 **Shivam Kumar**
 
 GitHub: https://github.com/shivam-kuamr013/photo-gallery-assignment.git
-https://github.com/YOUR_USERNAME
