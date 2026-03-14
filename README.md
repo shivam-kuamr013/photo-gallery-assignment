@@ -105,19 +105,9 @@ https://picsum.photos/v2/list?limit=30
 
 ---
 
-## 🎥 Demo Video
-
-Video walkthrough explaining the implementation:
-
-```
-Add your video link here
-```
-
----
-
 ## 👨‍💻 Author
 
 **Shivam Kumar**
 
-GitHub:
+GitHub: https://github.com/shivam-kuamr013/photo-gallery-assignment.git
 https://github.com/YOUR_USERNAME
